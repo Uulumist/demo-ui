@@ -21,6 +21,8 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Install http-server
+        run: npm install -g http-server
       - name: Start local server
         run: |
           npx http-server tests -p 8080 &
