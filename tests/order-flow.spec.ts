@@ -30,5 +30,4 @@ test.describe('Order-flow tests', () => {
         await page.getByTestId('submit-order').click();
         await expect(popUp).toBeEnabled();
     });
-
 });
