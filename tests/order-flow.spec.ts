@@ -3,7 +3,7 @@ import {faker} from "@faker-js/faker/locale/en_GB";
 
 test.beforeEach(async ({page}) => {
     const path = require('path');
-    const filePath = `file://${path.resolve(process.env.APP_URL)}`;
+    const filePath = `file://${path.resolve('order-flow.html')}`;
     await page.goto(filePath);
 })
 
