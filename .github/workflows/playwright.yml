@@ -23,12 +23,12 @@ jobs:
         run: npx playwright install --with-deps
       - name: Start local server
         run: |
-          npx http-server -p 8080 &
+          npx http-server tests -p 8080 &
         env:
-          APP_URL: ${{ secrets.APP_URL }}
+          APP_URL: "http://localhost:8080/order-flow.html"
       - name: Run Playwright tests
         env:
-          APP_URL: ${{ secrets.APP_URL }}
+          APP_URL: "http://localhost:8080/order-flow.html"
         run: npx playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
