@@ -24,10 +24,10 @@ jobs:
       - name: Setup environment variables
         run: echo "Environment variables configured."
         env:
-        APP_URL: ${{ secrets.APP_URL }}
+          APP_URL: ${{ secrets.APP_URL }}
       - name: Run Playwright tests
         env:
-        APP_URL: ${{ secrets.APP_URL }}
+          APP_URL: ${{ secrets.APP_URL }}
         run: npx playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
