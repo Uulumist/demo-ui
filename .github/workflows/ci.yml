@@ -21,8 +21,9 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Setup environment variables
-        run: echo "Environment variables configured."
+      - name: Start local server
+        run: |
+          npx http-server -p 8080 &
         env:
           APP_URL: ${{ secrets.APP_URL }}
       - name: Run Playwright tests
